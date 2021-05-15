@@ -1,4 +1,4 @@
-var xmenCharacters = ["CYCLOPS", "WOLVERINE", "CABLE", "JUGGERNAUT", "NIGHTCRAWLER", "MAGNETO", "PROFESSORX", "BEAST", "DEADPOOL", "GAMBIT"];
+var fruits = ["apple", "banana", "cantaloupe", "date", "elderberry", "fig", "grapefruit", "honeydew", "kiwi", "lemon", "mango", "nectarine", "orange", "peach", "raspberry", "strawberry", "tangerine", "watermelon"];
 var totalGuesses = 9;       // number of tries
 var userGuesses = [];       // letters the user guessed
 var computerPick;           // array number the machine choose randomly
@@ -15,12 +15,12 @@ var keySound = new Audio('./assets/sounds/typewriter-key.wav');
 function startGame() {
     guessesLeft = totalGuesses;
 
-    //grab a random number from the xmenCharacters array  (number of words)
-    computerPick = Math.floor(Math.random() * (xmenCharacters.length));
+    //grab a random number from the fruits array  (number of words)
+    computerPick = Math.floor(Math.random() * (fruits.length));
 
-    // if(xmenCharacters[computerPick] == xmenCharacters[0]) {
+    // if(fruits[computerPick] == fruits[0]) {
        // $('.clue').html("<img src='assets/images/cyclops.jpg' width='300'/>");
-    // }else if(xmenCharacters[computerPick] == xmenCharacters[1]) {
+    // }else if(fruits[computerPick] == fruits[1]) {
        // $('.clue').html("<img src='assets/images/wolverine.jpg' width='300'/>");
     // }else if(xmenCharacters[computerPick] == xmenCharacters[2]) {
        // $('.clue').html("<img src='assets/images/cable.jpg' width='300'/>");
@@ -45,7 +45,7 @@ function startGame() {
     wordGuessed = [];
 
     //build the word with blanks
-    for (var i = 0; i < xmenCharacters[computerPick].length; i++) {
+    for (var i = 0; i < fruits[computerPick].length; i++) {
         wordGuessed.push("_");
     }   
 
@@ -79,8 +79,8 @@ function refreshScreen() {
 function evaluateGuess(letter) {
     var positions = [];
 
-    for (var i = 0; i < xmenCharacters[computerPick].length; i++) {
-        if(xmenCharacters[computerPick][i] === letter) {
+    for (var i = 0; i < fruits[computerPick].length; i++) {
+        if(fruits[computerPick][i] === letter) {
             positions.push(i);
         }
     }
